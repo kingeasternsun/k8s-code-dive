@@ -122,8 +122,8 @@ func NewFramework(r Registry, profile *config.KubeSchedulerProfile, opts ...Opti
 	}
 
 	// Configurator 提供
-	// https://sourcegraph.com/github.com/kubernetes/kubernetes@aea7bbadd2fc0cd689de94a54e5b7b758869d691/-/blob/pkg/scheduler/factory.go?L144:20&popover=pinned
-	// 最终对应到 https://sourcegraph.com/github.com/kubernetes/kubernetes@aea7bbadd2fc0cd689de94a54e5b7b758869d691/-/blob/cmd/kube-scheduler/app/server.go?L334:13&popover=pinned
+	// https://sourcegraph.com/github.com/kubernetes/kubernetes@v1.21.5/-/blob/pkg/scheduler/factory.go?L144:20&popover=pinned
+	// 最终对应到 https://sourcegraph.com/github.com/kubernetes/kubernetes@v1.21.5/-/blob/cmd/kube-scheduler/app/server.go?L334:13&popover=pinned
 	if options.captureProfile != nil {
 		if len(outputProfile.PluginConfig) != 0 {
 			sort.Slice(outputProfile.PluginConfig, func(i, j int) bool {
@@ -133,7 +133,7 @@ func NewFramework(r Registry, profile *config.KubeSchedulerProfile, opts ...Opti
 			outputProfile.PluginConfig = nil
 		}
 		// 保存到一个名为 completedProfiles 的KubeSchedulerProfile Slice中而已
-		// https://sourcegraph.com/github.com/kubernetes/kubernetes@aea7bbadd2fc0cd689de94a54e5b7b758869d691/-/blob/cmd/kube-scheduler/app/server.go?L320:2&popover=pinned#tab=references
+		// https://sourcegraph.com/github.com/kubernetes/kubernetes@v1.21.5/-/blob/cmd/kube-scheduler/app/server.go?L320:30&popover=pinned
 		options.captureProfile(outputProfile)
 	}
 
