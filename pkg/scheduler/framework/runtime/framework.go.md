@@ -132,6 +132,8 @@ func NewFramework(r Registry, profile *config.KubeSchedulerProfile, opts ...Opti
 		} else {
 			outputProfile.PluginConfig = nil
 		}
+		// 保存到一个名为 completedProfiles 的KubeSchedulerProfile Slice中而已
+		// https://sourcegraph.com/github.com/kubernetes/kubernetes@aea7bbadd2fc0cd689de94a54e5b7b758869d691/-/blob/cmd/kube-scheduler/app/server.go?L320:2&popover=pinned#tab=references
 		options.captureProfile(outputProfile)
 	}
 
